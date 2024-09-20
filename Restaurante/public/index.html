@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Orden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Orden</h1>
+    <form id="ordenForm" class="form" method="post">
+        <div class="form-container">
+            <div class="form_group">
+                <input type="text" name="nombre_mesero" id="nombre_mesero" class="form_input" placeholder=" " required>
+                <label for="nombre_mesero" class="form_label">Nombre Mesero:</label>
+            </div>
+            <div class="form_group">
+                <input type="date" name="fecha_orden" id="fecha_orden" class="form_input" placeholder=" " required>
+                <label for="fecha_orden" class="form_label">Fecha Orden:</label>
+            </div>
+            <div class="form_group">
+                <input type="time" name="hora_cobro" id="hora_cobro" class="form_input" placeholder=" " required>
+                <label for="hora_cobro" class="form_label">Hora de Cobro:</label>
+            </div>
+            <div class="form_group">
+                <input type="number" name="mesa" id="mesa" class="form_input" placeholder=" " required>
+                <label for="mesa" class="form_label">Mesa:</label>
+            </div>
+            <div class="form_group">
+                <input type="text" name="producto" id="producto" class="form_input" placeholder=" " required>
+                <label for="producto" class="form_label">Producto:</label>
+            </div>
+            <div class="form_group">
+                <input type="text" name="tipo_cliente" id="tipo_cliente" class="form_input" placeholder=" " required>
+                <label for="tipo_cliente" class="form_label">Tipo Cliente:</label>
+            </div>
+            <input type="submit" class="form_submit" value="Enviar">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('ordenForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('http://localhost:3000/orden', {
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
