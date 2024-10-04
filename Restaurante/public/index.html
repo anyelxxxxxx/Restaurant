@@ -12,11 +12,26 @@
 <body>
     <h1>Orden</h1>
     <form id="ordenForm" class="form" method="post">
+
         <div class="form-container">
+
             <div class="form_group">
-                <input type="text" name="nombre_mesero" id="nombre_mesero" class="form_input" placeholder=" " required>
+                <input type="number" name="mesa" id="Mesa" class="form_input" placeholder=" " required>
+                <label for="mesa" class="form_label">Mesa:</label>
+            </div>
+
+            <div class="form_group">
+                <input type="text" name="tipo_cliente" id="Tipo" class="form_input" placeholder=" " required>
+                <label for="tipo_cliente" class="form_label">Tipo Cliente:</label>
+            </div>
+
+
+            <div class="form_group">
+                <input type="text" name="nombre_mesero" id="Nombre" class="form_input" placeholder=" " required>
                 <label for="nombre_mesero" class="form_label">Nombre Mesero:</label>
             </div>
+
+
             <div class="form_group">
                 <input type="date" name="fecha_orden" id="fecha_orden" class="form_input" placeholder=" " required>
                 <label for="fecha_orden" class="form_label">Fecha Orden:</label>
@@ -25,18 +40,8 @@
                 <input type="time" name="hora_cobro" id="hora_cobro" class="form_input" placeholder=" " required>
                 <label for="hora_cobro" class="form_label">Hora de Cobro:</label>
             </div>
-            <div class="form_group">
-                <input type="number" name="mesa" id="mesa" class="form_input" placeholder=" " required>
-                <label for="mesa" class="form_label">Mesa:</label>
-            </div>
-            <div class="form_group">
-                <input type="text" name="producto" id="producto" class="form_input" placeholder=" " required>
-                <label for="producto" class="form_label">Producto:</label>
-            </div>
-            <div class="form_group">
-                <input type="text" name="tipo_cliente" id="tipo_cliente" class="form_input" placeholder=" " required>
-                <label for="tipo_cliente" class="form_label">Tipo Cliente:</label>
-            </div>
+           
+       
             <input type="submit" class="form_submit" value="Enviar">
         </div>
     </form>
